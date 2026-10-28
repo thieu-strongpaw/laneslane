@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block title %}Lane's Lane{% endblock title %}</title>
+		<link rel="stylesheet" href="{% static 'MainPage/css/MainPage.css' %}">
+	</head>
+
+	<body class="body">
+		<div class="banner">
+			<h1>
+				~ Some Large Banner ~
+		</div>
+
+		<hr>
+
+		<nav class="navbar">
+			<div class="logo">
+				Lane's Lane
+			</div>
+
+			<button
+					class="menu-toggle"
+					aria-label="toggle navation"
+					aria-expanded="false"
+					aria-controls="nav-links">
+				&#x2630
+			</button>
+
+			<ul class="nav-links" id="nav-links">
+				<li><a href=#>Home</a></li>
+				<li><a href=#about>About</a></li>
+				<li><a href=#gallery>Gallery</a></li>
+			</ul>
+
+		</nav>
+		<script src="{% static 'MainPage/js/MainPage.js' %}"></script>
+
+		<main class="main-content">
+			<h1>Welcome to Lane's Lane</h1>
+			<p>A profile and gallery for the amazing Jacki Lane</p>
+			<div class="main-content-card">
+				<div class="main-content-card-contents-left">
+					<h3>About Me</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="main-content-card-contents-right">
+					<p> THIS SHOULD BE A PICTURE OF JACKI</p>
+				</div>
+			</div>
+		
+	</body>
