@@ -1,0 +1,18 @@
+<!DOCtype html>
+
+<h1> this will be the gallery</h1>
+
+
+<div class="gallery">
+
+	{% for item in images %}
+
+	<div class="gallery-item">
+		<img src="{{ item.image.url }}" alt="{{ item.title }}">
+
+		<h3>{{ item.title }}</h3>
+		<p>{{ item.description }}</p>
+	</div>
+
+	{% endfor %}
+</div>

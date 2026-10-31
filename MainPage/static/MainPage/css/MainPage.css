@@ -68,7 +68,7 @@
 
 .main-content-card {
 	display: flex;
-	width: 100%;
+	margin-right: 20px;
 }
 
 
@@ -77,11 +77,15 @@
 }
 
 .main-content-card-contents-right {
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex: 0 0 40%;
+	width: 280px;
+	height: 170px;
 	border: 1px solid black;
-	border-radius: 20px;
+	border-radius: 220px;
 	padding: 5px;
 	margin: 5px;
 }
+
+
