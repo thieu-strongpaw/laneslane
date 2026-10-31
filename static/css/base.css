@@ -1,0 +1,6 @@
+/* static/base/css/base.css */
+
+.text_box {
+	display: flex;
+	justify-content: center;
+}
