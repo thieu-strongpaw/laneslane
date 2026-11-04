@@ -36,15 +36,22 @@
 			<article class="spotlight">
 
 				<h3>{{ spotlight.title }}</h3>
+				<div class="main-content-car">
+
+					<div class="main-content-card-contents-right">
 
 				<img class="spotlight-image"
 						src="{{ spotlight.image.url }}"
 						alt="{{ spotlight.title }}"
 						>
 
+					</div>
+				<div class="main-content-card-contents-left">
 				<p>{{ spotlight.description }}</p>
+				</div>
 
 			</article>
+				</div>
 
 			{% empty %}
 			<p>No spotlights are currently available.</p>
