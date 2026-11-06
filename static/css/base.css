@@ -1,5 +1,9 @@
 /* static/css/base.css */
 
+body {
+	background-color: #e297af;
+}
+
 .text_box {
 	display: flex;
 	justify-content: center;

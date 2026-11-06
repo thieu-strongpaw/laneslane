@@ -9,7 +9,9 @@
 {% block content %}
 
 
-		<main class="main-content">
+
+<main>
+		<div class="main-content">
 			<section class="artist-profile">
 			{% if artist %}
 			<h1>{{ artist.title }}</h1>
@@ -27,37 +29,47 @@
 			</div>
 			{% endif %}
 			</section>
+		</div>
 
-			<section class="spotlight">
-			<h2>Spotlights</h2>
+		<div class="main-content">
 
-			{% for spotlight in spotlights %}
+			<section class="spotlights">
 
-			<article class="spotlight">
+					<h2>Spotlights</h2>
 
-				<h3>{{ spotlight.title }}</h3>
-				<div class="main-content-car">
+					{% for spotlight in spotlights %}
 
-					<div class="main-content-card-contents-right">
+							<article class="spotlight-card">
 
-				<img class="spotlight-image"
-						src="{{ spotlight.image.url }}"
-						alt="{{ spotlight.title }}"
-						>
+									<h3 class="spotlight-title">
+											{{ spotlight.title }}
+									</h3>
 
-					</div>
-				<div class="main-content-card-contents-left">
-				<p>{{ spotlight.description }}</p>
-				</div>
+									<div class="spotlight-body">
 
-			</article>
-				</div>
+											<img
+													class="spotlight-image"
+													src="{{ spotlight.image.url }}"
+													alt="{{ spotlight.title }}"
+											>
 
-			{% empty %}
-			<p>No spotlights are currently available.</p>
-			{% endfor %}
+											<div class="spotlight-description">
+													{{ spotlight.description|linebreaks }}
+											</div>
+
+									</div>
+
+							</article>
+
+					{% empty %}
+
+							<p>No spotlights are currently available.</p>
+
+					{% endfor %}
 
 			</section>
+			
+		</div>
 		
 	</main>
 

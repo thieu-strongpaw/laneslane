@@ -1,105 +1,243 @@
 /* MainPage/static/MainPage/css/MainPage.css */
 
-.banner {
-	background-color: #803215;
-	text-align: center;
-	border: 1px solid black;
-	border-radius: 20px;
+
+/* ==========================================
+   GENERAL
+   ========================================== */
+
+* {
+    box-sizing: border-box;
 }
 
+.main-content {
+    margin: 1.5rem 0;
+}
+
+
+/* ==========================================
+   BANNER
+   ========================================== */
+
+.banner {
+    background-color: #803215;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
 .navbar {
-	display: flex;
-	justify-content: flex-start; 
-	align-items: center;
-	background-color: #FFC1AA;
-	border-radius: 20px;
-	position: sticky;
-	top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFC1AA;
+    border-radius: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 1rem;
-	margin: .5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem;
 }
 
 .nav-links {
-	display: flex;
-	justify-content: flex-start; 
-	gap: 20px;
-	list-style: none;
-}
-
-.menu-toggle {
-	display: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style: none;
 }
 
 .nav-links a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
-/* Mobile screen */
-@media (max-width: 768px) {
-
-	.menu-toggle {
-		display: block;
-	}
-
-	.nav-links {
-		display: none;
-		flex-direction: column;
-		justify-content: flex-start; 
-		border: 1px solid black;
-	}
-	
-	ul {
-		list-style: none;
-		padding: 4px;
-		margin: 6px;
-	}
-	
-	.nav-links.active {
-		display: flex;
-	}
+.menu-toggle {
+    display: none;
 }
 
-body {
-	background-color: #e297af;
+
+/* ==========================================
+   ARTIST PROFILE
+   ========================================== */
+
+.artist-profile {
+    margin-bottom: 2rem;
 }
 
 .main-content-card {
-	display: flex;
-	margin-right: 20px;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-right: 20px;
 }
 
-
 .main-content-card-contents-left {
-	flex: 0 0 60%;
+    flex: 1;
+    min-width: 0;
 }
 
 .main-content-card-contents-right {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 280px;
-	height: 170px;
-	padding: 5px;
-	margin: 5px;
-}
-
-.spotlight-image {
-	max-width: 250px;
-	height: auto;
-	aspect-ratio: 3 / 4;
-	object-fit: cover; 
-	border-radius: 12px;
+    flex: 0 0 250px;
 }
 
 .artist-image {
-	max-width: 250px;
-	height: auto;
-	aspect-ratio: 3 / 4;
-	object-fit: cover; 
-	border-radius: 12px;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   SPOTLIGHT SECTION
+   ========================================== */
+
+.spotlights {
+    margin-top: 2rem;
+}
+
+.spotlights > h2 {
+    margin-bottom: 1.5rem;
+}
+
+
+/* ==========================================
+   SPOTLIGHT CARDS
+   ========================================== */
+
+.spotlight-card {
+    background-color: #fff6f1;
+    border: 1px solid #803215;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Spotlight title */
+
+.spotlight-title {
+    margin: 0 0 1rem 0;
+}
+
+
+/* Spotlight image and description layout */
+
+.spotlight-body {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+
+/* Spotlight image */
+
+.spotlight-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+
+/* Spotlight description */
+
+.spotlight-description {
+    min-width: 0;
+    line-height: 1.6;
+}
+
+.spotlight-description p {
+    margin-top: 0;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        list-style: none;
+        padding: 4px;
+        margin: 6px;
+        border: 1px solid black;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    /* Artist profile */
+
+    .main-content-card {
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    .main-content-card-contents-right {
+        flex: none;
+        width: min(100%, 250px);
+    }
+
+
+    /* Spotlight cards */
+
+    .spotlight-card {
+        padding: 1rem;
+    }
+
+    .spotlight-body {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .spotlight-image {
+        max-width: 250px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .spotlight-card {
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .spotlight-image {
+        max-width: 100%;
+    }
+
 }
