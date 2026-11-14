@@ -1,0 +1,22 @@
+/* Apply the studio palette in both Django theme modes. */
+:root, html[data-theme="light"], html[data-theme="dark"] {
+    --primary: #803215; --secondary: #672910; --accent: #fff6f1;
+    --primary-fg: #fffaf7; --body-fg: #202b30; --body-bg: #fff6f1;
+    --body-quiet-color: #64534b; --body-medium-color: #64534b; --body-loud-color: #202b30;
+    --header-color: #803215; --header-branding-color: #803215;
+    --header-bg: #ffc1aa; --header-link-color: #54210e;
+    --breadcrumbs-fg: #fff6f1; --breadcrumbs-link-fg: #fff; --breadcrumbs-bg: #803215;
+    --link-fg: #803215; --link-hover-color: #54210e; --link-selected-fg: #54210e;
+    --hairline-color: #e5c9ba; --border-color: #d9b9a9;
+    --darkened-bg: #f8e8df; --selected-bg: #ffe3d4; --selected-row: #ffe3d4;
+    --button-bg: #803215; --button-hover-bg: #54210e;
+    --default-button-bg: #672910; --default-button-hover-bg: #54210e;
+    --close-button-bg: #64534b; --close-button-hover-bg: #483b35;
+    --object-tools-bg: #803215; --object-tools-hover-bg: #54210e;
+}
+#header { padding-block: 1.25rem; }
+#content h1 { font-weight: 600; color: #803215; }
+.module { border: 1px solid #e5c9ba; border-radius: 8px; overflow: hidden; }
+.module h2, .module caption, .inline-group h2 { background: #803215; }
+input, textarea, select { border-radius: 6px; }
+.submit-row { border-radius: 8px; }

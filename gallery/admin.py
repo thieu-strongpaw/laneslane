@@ -18,5 +18,5 @@ class GalleryImageAdmin(admin.ModelAdmin):
 
     list_filter = ("album", "is_public")
 
-    search_fields = ("title", "discription")
+    search_fields = ("title", "description")
 

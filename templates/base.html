@@ -1,54 +1,38 @@
 <!-- templates/base.html -->
-
-<!DOCTYPE html>
 {% load static %}
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{% block title %}Lane's Lane{% endblock title %}</title>
-		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Lane's Lane{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+    <script src="{% static 'js/base.js' %}" defer></script>
+</head>
+<body>
+    {% block hero %}{% endblock %}
 
-		{% block extra_css %}
-		{% endblock %}
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="logo">Lane's Lane</div>
+        <button type="button" class="menu-toggle"
+                aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="nav-links">&#x2630;</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'contact' %}">Contact info</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        </ul>
+    </nav>
 
-		<script src="{% static 'js/base.js' %}" defer></script>
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
 
-	</head>
-
-	<header class="header">
-		<div class="banner">
-			<h1>
-				~ Some Large Banner ~
-		</div>
-	</header>
-
-		<nav class="navbar">
-			<div class="logo">
-				Lane's Lane
-			</div>
-
-			<button
-					class="menu-toggle"
-					aria-label="toggle navation"
-					aria-expanded="false"
-					aria-controls="nav-links">
-				&#x2630
-			</button>
-
-			<ul class="nav-links" id="nav-links">
-				<li><a href=#>Home</a></li>
-				<li><a href=#about>About</a></li>
-				<li><a href=#gallery>Gallery</a></li>
-			</ul>
-
-		</nav>
-
-		{% block content %}
-		{% endblock %}
-
-		<footer class="footer">
-			<div class="text_box">
-			<p><b>@strongpawcoding, all rights reserved</b></p>
-			</div>
-		</footer>
+    <footer class="footer">
+        <div class="text_box">
+            <p><b>@strongpawcoding, all rights reserved</b></p>
+        </div>
+    </footer>
+</body>
+</html>

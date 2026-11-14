@@ -6,19 +6,28 @@
 	<link rel="stylesheet" href="{% static 'MainPage/css/MainPage.css' %}">
 {% endblock %}
 
+{% block hero %}
+    <header class="header">
+        <div class="banner">
+            <h1>Lane's Lane</h1>
+            <p>Art, stories, and a space to explore.</p>
+        </div>
+    </header>
+
+{% endblock %}
+
 {% block content %}
 
 
 
-<main>
 		<div class="main-content">
-			<section class="artist-profile">
+			<section class="artist-profile" id="about">
 			{% if artist %}
 			<h1>{{ artist.title }}</h1>
 			<div class="main-content-card">
 				<div class="main-content-card-contents-left">
-					<h3>Do we need a subtitle here??</h3>
-					<p>{{ artist.description|linebreaks }}</p>
+
+					{{ artist.description|linebreaks }}
 				</div>
 				<div class="main-content-card-contents-right">
 					<img class="artist-image"
@@ -68,9 +77,8 @@
 					{% endfor %}
 
 			</section>
-			
+
 		</div>
-		
-	</main>
+
 
 	{% endblock %}

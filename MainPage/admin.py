@@ -10,8 +10,9 @@ class Spotlightinline(admin.StackedInline):
 @admin.register(ArtistProfile)
 class ArtistProfileAdmin(admin.ModelAdmin):
     inlines = [Spotlightinline]
+    fieldsets = (("Artist introduction", {"fields": ("title", "description", "main_image"), "description": "Introduce yourself on the home page. Add featured artwork in Spotlights below."}),)
 
-    def has_add_permission(sefl, request):
+    def has_add_permission(self, request):
         return (
                 super().has_add_permission(request)
                 and not ArtistProfile.objects.exists()
@@ -35,3 +36,7 @@ class SpotlightAdmin(admin.ModelAdmin):
             "display_order",
             )
 
+
+admin.site.site_header = "Lane's Lane · Artist studio"
+admin.site.site_title = "Lane's Lane studio"
+admin.site.index_title = "Manage your artwork and website"

@@ -1,29 +1,31 @@
-<!-- gallery/templates/gallery/gallery/html -->
-
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}Gallery | Lane's Lane{% endblock %}
+
 {% block extra_css %}
-	<link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
 {% endblock %}
 
 {% block content %}
-
-<h1> this will be the gallery</h1>
-
+<h1 class="gallery-heading">Gallery</h1>
 
 <div class="gallery">
-
-	{% for item in images %}
-
-	<div class="gallery-item">
-		<img src="{{ item.image.url }}" alt="{{ item.title }}">
-
-		<h3>{{ item.title }}</h3>
-		<p>{{ item.description }}</p>
-	</div>
-
-	{% endfor %}
+    {% for item in images %}
+    <article class="gallery-item">
+        <figure class="gallery-image">
+            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+            {% if item.alttext %}
+            <figcaption class="gallery-image-alttext">{{ item.alttext }}</figcaption>
+            {% endif %}
+        </figure>
+        <div class="gallery-copy">
+            <h2>{{ item.title }}</h2>
+            {% if item.description %}
+            <div class="gallery-description">{{ item.description|linebreaks }}</div>
+            {% endif %}
+        </div>
+    </article>
+    {% endfor %}
 </div>
-
 {% endblock %}

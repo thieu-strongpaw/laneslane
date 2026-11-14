@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact info | Lane's Lane{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">{% endblock %}
+{% block content %}
+<section class="contact-page">
+    <h1>{{ contact.heading|default:"Contact info" }}</h1>
+    {% if contact %}
+        {% if contact.introduction %}<div class="contact-intro">{{ contact.introduction|linebreaks }}</div>{% endif %}
+        {% if contact.email or contact.phone or contact.studio_details or contact.website_url %}
+        <dl class="contact-details">
+            {% if contact.email %}<div><dt>Email</dt><dd><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></dd></div>{% endif %}
+            {% if contact.phone %}<div><dt>Phone</dt><dd>{{ contact.phone }}</dd></div>{% endif %}
+            {% if contact.studio_details %}<div><dt>Studio &amp; visits</dt><dd>{{ contact.studio_details|linebreaks }}</dd></div>{% endif %}
+            {% if contact.website_url %}<div><dt>Find me online</dt><dd><a href="{{ contact.website_url }}" rel="me">{{ contact.website_label|default:"Website" }}</a></dd></div>{% endif %}
+        </dl>
+        {% endif %}
+    {% else %}<p>Contact details will be available soon.</p>{% endif %}
+</section>
+{% endblock %}

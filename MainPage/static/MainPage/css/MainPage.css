@@ -156,3 +156,20 @@
     }
 
 }
+
+/* Warm paper cards give featured artwork a little room to breathe. */
+.spotlight-card {
+    background: #fffaf7;
+    border: 1px solid #e5c9ba;
+    border-top: 4px solid #803215;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: 0 10px 28px rgba(128, 50, 21, 0.08);
+}
+.spotlight-title { color: #803215; font-size: clamp(1.4rem, 3vw, 2rem); }
+.spotlight-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 2rem; }
+.spotlight-image { aspect-ratio: auto; max-height: 32rem; object-fit: contain; background: #fff6f1; }
+.spotlight-description { max-width: 55ch; }
+@media (max-width: 768px) {
+    .spotlight-body { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+    .spotlight-image { max-width: 100%; }
+}

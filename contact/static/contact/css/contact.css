@@ -1,0 +1,9 @@
+.contact-page { max-width: 48rem; margin: 1rem auto 3rem; }
+.contact-page h1 { color: #803215; font-size: clamp(2rem, 5vw, 3rem); margin-top: 0; }
+.contact-intro { max-width: 60ch; margin-bottom: 2rem; }
+.contact-details { background: #fffaf7; border: 1px solid #e5c9ba; border-radius: 16px; padding: clamp(1rem, 4vw, 2rem); }
+.contact-details > div + div { border-top: 1px solid #e5c9ba; margin-top: 1.25rem; padding-top: 1.25rem; }
+.contact-details dt { font-weight: 700; color: #803215; }
+.contact-details dd { margin: .35rem 0 0; }
+.contact-details dd p { margin: 0 0 .5rem; }
+.contact-page a { color: #803215; text-underline-offset: .2em; }

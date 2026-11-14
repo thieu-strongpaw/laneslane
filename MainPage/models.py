@@ -19,7 +19,8 @@ class ArtistProfile(models.Model):
             )
 
     class Meta:
-        verbose_name = "Artist Profile"
+        verbose_name = "Artist profile"
+        verbose_name_plural = "Artist profile"
         constraints = [
                 models.CheckConstraint(
                     condition=models.Q(id=1),
@@ -27,7 +28,7 @@ class ArtistProfile(models.Model):
                     )
                 ]
 
-    def __str_(self):
+    def __str__(self):
         return self.title
 
 class Spotlight(models.Model):

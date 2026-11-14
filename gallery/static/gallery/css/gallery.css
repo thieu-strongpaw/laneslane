@@ -1,0 +1,69 @@
+/* Keep each artwork and its accompanying text together. */
+.gallery-heading {
+    margin: 0 0 2rem;
+}
+
+.gallery {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.gallery-item {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    padding-top: 2rem;
+    border-top: 1px solid #d9c5bb;
+}
+
+.gallery-image {
+    min-width: 0;
+    margin: 0;
+}
+
+.gallery-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 36rem;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.gallery-image-alttext {
+    margin-top: 0.75rem;
+    color: #536269;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.gallery-copy {
+    min-width: 0;
+    max-width: 40ch;
+}
+
+.gallery-copy h2 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    line-height: 1.25;
+}
+
+.gallery-description p {
+    margin: 0 0 1rem;
+}
+
+.gallery-description p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .gallery-item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .gallery-copy {
+        max-width: 60ch;
+    }
+}
