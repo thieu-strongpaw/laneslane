@@ -8,3 +8,6 @@ class GalleryView(ListView):
     context_object_name = "images"
 
 
+
+    def get_queryset(self):
+        return super().get_queryset().filter(is_public=True)
